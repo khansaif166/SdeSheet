@@ -1,0 +1,17 @@
+public static ArrayList<Integer> nextPermutation(ArrayList<Integer> p) 
+	{
+		if(p.size()<=1) return p;
+        int i = p.size()-2;
+        while(i>=0 && p.get(i) >= p.get(i+1)) i--;
+        if(i>=0){
+            int j = p.size()-1;
+            while(p.get(j) <= p.get(i)) j--;
+            Collections.swap(p,i,j);
+        }
+        rev(p,i+1,p.size()-1);
+        return p;
+	}
+    
+    public static void rev(ArrayList<Integer> p,int i,int j){
+        while(i<j) Collections.swap(p,i++,j--);
+    }
