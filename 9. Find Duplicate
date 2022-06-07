@@ -1,0 +1,14 @@
+public static int findDuplicate(ArrayList<Integer> arr, int n){
+        int f = arr.get(0),s = arr.get(0);
+        while(true){
+            f = arr.get(arr.get(f));
+            s = arr.get(s);
+            if(s == f) break;
+        }
+        f = arr.get(0);
+        while(s!=f){
+            s = arr.get(s);
+            f = arr.get(f);
+        }
+        return s;
+    }
