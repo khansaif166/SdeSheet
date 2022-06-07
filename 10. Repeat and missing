@@ -1,0 +1,19 @@
+public ArrayList<Integer> repeatedNumber(final List<Integer> A) {
+        int [] map = new int[A.size()+1];
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i=0;i<A.size();i++){
+            map[A.get(i)]++;
+        }
+       
+        for(int i =1;i<map.length;i++){
+            if(map[i] > 1){
+                ans.add(i);
+            }
+        }
+        for(int i =1;i<map.length;i++){
+            if(map[i]== 0){
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
