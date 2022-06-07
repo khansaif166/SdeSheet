@@ -1,0 +1,24 @@
+void swap(int [][] m,int j,int k,int i){
+        int temp = m[i][k];
+        m[i][k] = m[i][j];
+        m[i][j] = temp;
+    }
+    public void rotate(int[][] m) {
+       
+        for(int i=0;i<m.length;i++){
+            for(int j=i+1;j<m[0].length;j++){
+                 int temp = m[i][j];
+                 m[i][j] = m[j][i];
+                 m[j][i] = temp;
+            }
+        }
+      
+        for(int i=0;i<m.length;i++){
+            int j=0,k=m[0].length-1;
+            while(j<k){
+                swap(m,j,k,i);
+                j++;
+                k--;
+            }
+        }
+    }
