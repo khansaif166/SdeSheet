@@ -1,0 +1,13 @@
+static boolean findTargetInMatrix(ArrayList<ArrayList<Integer>> mat, int m, int n, int t) {
+		int i=0;
+        while(i < mat.size()-1 && mat.get(i+1).get(0) <= t) i++;
+        int j = n-1,k=0;
+        while(k<=j){
+            int mid = (k+j)/2;
+            if(mat.get(i).get(mid) == t) return true;
+            if(mat.get(i).get(mid) > t) j = mid-1;
+            else k = mid+1;
+        }
+        
+        return false;
+	}
